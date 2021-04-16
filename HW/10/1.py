@@ -1,47 +1,73 @@
 class NotMainHero:
 
-    def __init__(self, name, act):
+    def __init__(self, name):
         self.name = name
-        self.act = act
 
-Babka = NotMainHero("Babka", 'gotovit')
-Ded = NotMainHero("Ded", 'ask')
-Lisa = NotMainHero("Lisa", 'eat')
+Babka = NotMainHero("Старуха")
+Ded = NotMainHero("Старик")
+Lisa = NotMainHero("Лиса")
 
 class MainHero:
-    def __init__(self, name, ispechen, sbejal, poet, sjeden):
+    def __init__(self, name, f_act, s_act, t_act):
         self.name = name
-        self.ispechen = ispechen
-        self.sbejal = sbejal
-        self.poet = poet
-        self.sjeden = sjeden
+        self.f_act = f_act
+        self.s_act = s_act
+        self.t_act = t_act
 
-Kolobok = MainHero("Kolobok", 'ispechen', 'sbejal', 'poet', 'sjeden')
+Kolobok = MainHero("Колобок", 'poyavilsia', 'sbejal', 'sjeden')
+
+
+def sbejal():
+    return 'Kolobok sbejal'
+
+def poyavilsia():
+    return 'Poyavilsia Kolobok'
+
+
+Skazochnik = MainHero("Skazochnik", 'start', 'vstrecha_lisa', 'epilog')
+
+def start():
+    return 'start of a tale'
+
+class Skazochnik(MainHero):
+    def start(self):
+        print('Жил-был старик со старухою.')
+
+def act(self):
+    print(f'{self.name} говорит:')
 
 class Ded(NotMainHero):
     def ask(Ded):
-        print('"Babka, please, bake me Kolobok".')
-
-def act(self):
-    print(f'{self.name} govorit:')
+        print('— Испеки, старуха, колобок! По коробу поскреби, по сусеку помети; авось муки и наберется.')
 
 
 class Babka(NotMainHero):
     def gotovit(self, Kolobok):
-        print('"Ok then", \n and Babka poskrebla po susekam i ispekla Kolobok')
-        Kolobok.ispechen()
+        print('"Будь по твоему". \n Взяла старуха крылышко, по коробу поскребла, по сусеку помела, и набралось муки')
+        print('пригоршни с две. Замесила на сметане, изжарила в масле и положила на окошечко постудить.')
+
 
 class Kolobok(MainHero):
-    def pobeg(self):
-        print('And then, Kolobok has had run away')
+    def sbejal(self):
+        print('Колобок полежал — полежал, да вдруг и покатился — с окна на лавку, с лавки на пол, по полу да к дверям,')
+        print('перепрыгнул через порог в сени, из сеней на крыльцо, с крыльца — на двор, со двора за ворота, дальше и дальше.')
+        kolobok.sbejal
 
 
-babka = Babka("Babka", 'gotovit')
-ded = Ded("Ded", 'ask')
-kolobok = Kolobok("Kolobok", 'ispechen', 'sbejal', 'poet', 'sjeden')
+class Skazochnik(MainHero):
+    def vstrecha_lisa(self):
+        print('Катится, катится колобок, а навстречу ему лиса:')
+
+babka = Babka("Старуха")
+ded = Ded("Старик")
+kolobok = Kolobok("Колобок", 'poyavilsia', 'sbejal', 'sjeden')
+skazochnik = Skazochnik("Skazochnik", 'start', 'vstrecha_lisa', 'epilog')
 
 def tale():
+    skazochnik.start
+    act(ded)
+    ded.ask()
     babka.gotovit(kolobok)
-    kolobok.pobeg()
+    kolobok.sbejal()
 
 tale()
