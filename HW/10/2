@@ -1,0 +1,98 @@
+class NotMainHero:
+
+    def __init__(self, name):
+        self.name = name
+
+Babka = NotMainHero("Старуха")
+Ded = NotMainHero("Старик")
+Lisa = NotMainHero("Лиса")
+
+class MainHero:
+    def __init__(self, name, f_act, s_act, t_act):
+        self.name = name
+        self.f_act = f_act
+        self.s_act = s_act
+        self.t_act = t_act
+
+Kolobok = MainHero("Колобок", 'poyavilsia', 'sbejal', 'died')
+
+
+def sbejal():
+    return 'Kolobok sbejal'
+
+def poyavilsia():
+    return 'Poyavilsia Kolobok'
+
+def died():
+    return 'Kolobok died'
+
+Skazochnik = MainHero("Skazochnik", 'start', 'vstrecha_lisa', 'epilog')
+
+def start():
+    return 'start of a tale'
+
+class Skazochnik(MainHero):
+    def start(self):
+        print('Жил-был старик со старухою.')
+
+def act(self):
+    print(f'{self.name} говорит:')
+
+class Ded(NotMainHero):
+    def ask(Ded):
+        print('— Испеки, старуха, колобок! По коробу поскреби, по сусеку помети; авось муки и наберется.')
+
+
+class Babka(NotMainHero):
+    def gotovit(self):
+        print('"Будь по твоему". \n Взяла старуха крылышко, по коробу поскребла, по сусеку помела, и набралось муки')
+        print('пригоршни с две. Замесила на сметане, изжарила в масле и положила на окошечко постудить.')
+
+
+class Kolobok(MainHero):
+    def sbejal(self):
+        print('Колобок полежал — полежал, да вдруг и покатился — с окна на лавку, с лавки на пол, по полу да к дверям,')
+        print('перепрыгнул через порог в сени, из сеней на крыльцо, с крыльца — на двор, со двора за ворота, дальше и дальше.')
+        kolobok.sbejal
+
+
+class Skazochnik(MainHero):
+    def vstrecha_lisa(self):
+        print('Катится, катится колобок, а навстречу ему лиса:')
+
+class Lisa(NotMainHero):
+    def govorit(self):
+        print('— Здравствуй, колобок! Какой ты хорошенький. Колобок, колобок! Я тебя съем.')
+
+class Kolobok(MainHero):
+    def poet(self):
+        print('— Не ешь меня, лиса! Я тебе песенку спою')
+        print('И запел: \n — Я Колобок, Колобок! \n Я по коробу скребен, \n По сусеку метен, \n На сметане мешон,')
+        print('Да в масле пряжон, \n На окошке стужон; \n Я от дедушки ушел, \n Я от бабушки ушел, \n А от тебя, лиса, и подавно уйду!')
+
+class Skazochnik(MainHero):
+    def epilog(self, Kolobok):
+        print('— Спасибо, колобок! Славная песенка, еще бы послушала! Сядь-ка на мой язычок да пропой в последний разок, —')
+        print('сказала лиса и высунула свой язык; колобок прыг ей на язык, а лиса — ам его! И съела колобка…')
+        Kolobok.died
+
+babka = Babka("Старуха")
+ded = Ded("Старик")
+lisa = Lisa("Лиса")
+kolobok = Kolobok("Колобок", 'poyavilsia', 'sbejal', 'died')
+skazochnik = Skazochnik("Skazochnik", 'start', 'vstrecha_lisa', 'epilog')
+
+
+def tale():
+    start()
+    act(ded)
+    ded.ask()
+    babka.gotovit()
+    sbejal()
+    act(lisa)
+    lisa.govorit()
+    act(kolobok)
+    kolobok.poet()
+    skazochnik.epilog(kolobok)
+
+tale()
