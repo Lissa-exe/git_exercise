@@ -64,7 +64,7 @@ kolobok = Kolobok("Колобок", 'poyavilsia', 'sbejal', 'sjeden')
 skazochnik = Skazochnik("Skazochnik", 'start', 'vstrecha_lisa', 'epilog')
 
 def tale():
-    skazochnik.start
+    skazochnik.start()
     act(ded)
     ded.ask()
     babka.gotovit(kolobok)
