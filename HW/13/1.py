@@ -32,9 +32,6 @@ class Warrior:
         self.armor += armor
 
     def heat_other(self, other_warrior):
-        if other_warrior.status == 'die':
-            print(other_warrior.name + ' погиб')
-            raise Exception
         if other_warrior.armor:
             armor_value = other_warrior.armor - self.weapon.power
             if armor_value < 0:
@@ -87,10 +84,17 @@ def main_fighting_area():
             print(tartaglia.durability, 'Тарталья, прочность оружия')
             if kaeya.health > tartaglia.health:
                 print('Кэйа победил')
-                return
+                pass
             else:
                 print('Тарталья победил')
+                pass
             print('раунд')
+            if kaeya.health <= 0:
+                print('Кэйа погиб')
+                pass
+            if tartaglia.health <= 0:
+                print('Тарталья погиб')
+                pass
             counter -= 1
 
 
