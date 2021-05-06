@@ -21,6 +21,7 @@ class Weapon(NamedTuple):
 class Warrior:
     def __init__(self, weapon: Weapon, name: str, health: int):
         self.weapon = weapon
+        self.durability = randint(3, 5)
         self.name = name
         self.health = health
         self.armor = randint(5, 10)
@@ -59,6 +60,11 @@ class Warrior:
             other_warrior.status = 'die'
             return
         other_warrior.health -= self.weapon.power
+        if other_warrior.durability:
+            d_value = other_warrior.durability - self.weapon.power
+            if d_value < 0:
+                print('Оружие сломано. Достаёт новое.')
+                random_choose_weapon()
 
 def random_choose_weapon():
     weapon_list = []
@@ -76,7 +82,7 @@ def main_fighting_area():
     kaeya = Warrior(name='Кэйа', health=10, weapon=random_choose_weapon())
     tartaglia = Warrior(name='Тарталья', health=10, weapon=random_choose_weapon())
     if start == 'да':
-        counter = 5
+        counter = 10
 
         while counter:
             print(kaeya.weapon.power, 'Кэйа, оружие')
@@ -87,6 +93,8 @@ def main_fighting_area():
             print(tartaglia.armor, 'Тарталья, броня')
             kaeya.heat_other(tartaglia)
             tartaglia.heat_other(kaeya)
+            print(kaeya.durability, 'Кэйа, прочность оружия')
+            print(tartaglia.durability, 'Тарталья, прочность оружия')
             print('раунд')
             counter -= 1
 
