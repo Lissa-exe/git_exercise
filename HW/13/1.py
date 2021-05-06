@@ -1,14 +1,3 @@
-"""
-Создать класс воина, создать 2 или больше объектов воина с соответствующими воину атрибутами. Реализовать методы,
-которые позволять добавить здоровья, сменить оружие. Реализовать возможность драки 2х воинов с потерей здоровья,
-приобретения опыта.
-Следует учесть:
- - у воина может быть броня
- - здоровье не может быть меньше 0
- - броня не может быть меньше 0
- - здоровье не тратится пока броня не 0
-Было бы неплохо добавить возможность воину носить несколько видов оружия и при сломаном текущем заменить его (опционально)
-"""
 from random import randint, choice
 from typing import NamedTuple
 
@@ -81,6 +70,7 @@ def main_fighting_area():
     start = input('Начать драку? \n')
     kaeya = Warrior(name='Кэйа', health=10, weapon=random_choose_weapon())
     tartaglia = Warrior(name='Тарталья', health=10, weapon=random_choose_weapon())
+
     if start == 'да':
         counter = 10
 
@@ -95,6 +85,11 @@ def main_fighting_area():
             tartaglia.heat_other(kaeya)
             print(kaeya.durability, 'Кэйа, прочность оружия')
             print(tartaglia.durability, 'Тарталья, прочность оружия')
+            if kaeya.health > tartaglia.health:
+                print('Кэйа победил')
+                return
+            else:
+                print('Тарталья победил')
             print('раунд')
             counter -= 1
 
