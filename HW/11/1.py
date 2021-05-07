@@ -1,6 +1,3 @@
-#Реализовать класс фигуры. На основе фигуры реализовать класс треугольника, квадрата и прямоугольника с
-#методами подсчета площади и периметра. Методы должны возвращать (return) значение, а не принтить (это важно)
-
 class Figures:
 
     def perimeter(self):
@@ -11,9 +8,9 @@ class Figures:
 
 class Triangle(Figures):
     def __init__(self, side_1, side_2, side_3):
-        self.side_1 = side_1 is int
-        self.side_2 = side_2 is int
-        self.side_3 = side_3 is int
+        self.side_1 = side_1
+        self.side_2 = side_2
+        self.side_3 = side_3
 
     def validation_of_triangle(self, side_1, side_2, side_3):
         if side_1 > (side_2 + side_3):
@@ -32,7 +29,7 @@ class Triangle(Figures):
 
 class Foursquare(Figures):
     def __init__(self, side):
-        self.side = side is int
+        self.side = side
 
     def perimeter(self):
         return 4 * self.side
@@ -42,8 +39,8 @@ class Foursquare(Figures):
 
 class Rectangle(Figures):
     def __init__(self, side_1, side_2):
-        self.side_1 = side_1 is int
-        self.side_2 = side_2 is int
+        self.side_1 = side_1
+        self.side_2 = side_2
 
     def perimeter(self):
         return 2 * (self.side_1 + self.side_2)
@@ -64,14 +61,11 @@ class Rectangle(Figures):
 
 class Person:
     def __init__(self, age, name, _id):
-        self.age = age is int
+        self.age = age
         self.name = name
         self.__friends = {}
         self.id = _id
 
-    #нельзя использовать append в листах (при условии, что выше тоже был бы лист) в классах?
-    #def know(self, another_person_object):
-    #self.__friends.append(another_person_object)
 
     def know(self, another_person_object):
         self.__friends.setdefault(another_person_object.id, another_person_object)
@@ -87,4 +81,3 @@ print(person_1.is_known(person_2))
 person_1.know(person_2)
 
 print(person_1.is_known(person_2))
-#возвращает False? обязательно использовать @property?
