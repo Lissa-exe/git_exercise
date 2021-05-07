@@ -18,7 +18,7 @@ class Student:
     def __init__(self, name, age, grades, group):
         self.name = name is str
         self.age = age is int
-        self.grades = grades is {}
+        self.grades = grades or {}
         self.group = group
         self._id = uuid.uuid4()
 
@@ -49,15 +49,10 @@ class Group:
         self.students.setdefault(student._id, student)
         student.group = self
 
-#можно ли так?
-#    @property
-#    def average_grades_g(self):
-#        return mean([student.average_grades for student in self.students.values()])
-
-
     @property
-    def average_grades(self):
-        return sum([student.average_grades for student in self.students.values()]) / len(self.students)
+    def average_grades_g(self):
+        return mean([student.average_grades for student in self.students.values()])
+
 
 class Seniors:
     def __init__(self):
