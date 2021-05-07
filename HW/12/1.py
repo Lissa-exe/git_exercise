@@ -16,8 +16,8 @@ import uuid
 
 class Student:
     def __init__(self, name, age, grades, group):
-        self.name = name is str
-        self.age = age is int
+        self.name = name
+        self.age = age
         self.grades = grades or {}
         self.group = group
         self._id = uuid.uuid4()
