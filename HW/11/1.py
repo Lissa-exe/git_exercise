@@ -18,13 +18,10 @@ class Triangle(Figures):
     def validation_of_triangle(self, side_1, side_2, side_3):
         if side_1 > (side_2 + side_3):
             raise ValueError('1Incorrect format! Side is need to be mere than sum of other two sides.')
-        pass
         if side_2 > (side_1 + side_3):
             raise ValueError('2Incorrect format! Side is need to be mere than sum of other two sides.')
-        pass
         if side_3 > (side_1 + side_2):
             raise ValueError('3Incorrect format! Side is need to be mere than sum of other two sides.')
-        pass
 
     def perimeter(self):
         return self.side_1 + self.side_2 + self.side_3
